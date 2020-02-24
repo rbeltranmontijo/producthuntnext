@@ -1,13 +1,11 @@
 import Head from "next/head";
+import Layout from "../components/layout/Layout";
 
 const Home = () => (
   <div>
-    <h1>Inicio</h1>
-    <style jsx>{`
-      h1 {
-        color: red;
-      }
-    `}</style>
+    <Layout>
+      <h1>Inicio</h1>
+    </Layout>
   </div>
 );
 
