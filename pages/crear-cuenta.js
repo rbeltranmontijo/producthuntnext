@@ -1,14 +1,13 @@
-import React from "react";
 import Layout from "../components/layout/Layout";
+import React from "react";
 
-const Nosotros = () => {
+const CrearCuenta = () => {
   return (
     <div>
       <Layout>
-        <h1>Nosotros</h1>
+        <h1>Crear cuenta</h1>
       </Layout>
     </div>
   );
 };
-
-export default Nosotros;
+export default CrearCuenta;

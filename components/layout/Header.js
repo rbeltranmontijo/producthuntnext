@@ -40,11 +40,11 @@ const ParrafoConNombre = styled.p`
 `;
 
 const Header = () => {
-  const usuario = true;
+  const usuario = false;
   return (
     <HeaderStyled>
       <ContenedorHeader>
-        <div>
+        <DivContainer>
           <Link href="/">
             <a>
               <Logo>P</Logo>
@@ -53,7 +53,7 @@ const Header = () => {
 
           <Buscar />
           <Navegacion />
-        </div>
+        </DivContainer>
         <DivContainer>
           {usuario ? (
             <>
@@ -62,10 +62,10 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Link href="/">
+              <Link href="/login">
                 <Boton bgColor="true">Login</Boton>
               </Link>
-              <Link href="/">
+              <Link href="/crear-cuenta">
                 <Boton>Crear Cuenta</Boton>
               </Link>
             </>
