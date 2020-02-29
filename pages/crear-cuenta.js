@@ -8,6 +8,8 @@ import {
   Error
 } from "../components/ui/Formulario";
 
+import firebase from "../firebase";
+
 // Validaciones
 import useValidacion from "../hooks/useValidacion";
 import validarCrearCuenta from "../validacion/validarCrearCuenta";
@@ -27,8 +29,15 @@ const CrearCuenta = () => {
     handleBlur
   } = useValidacion(STATE_INICIAL, validarCrearCuenta, crearCuenta);
   const { nombre, email, password } = valores;
-  function crearCuenta() {
+
+  async function crearCuenta() {
     console.log("Creando cuenta...");
+    console.log(firebase);
+    try {
+      await firebase.registrar(nombre, email, password);
+    } catch (error) {
+      console.error("Hubo un error", error.message);
+    }
   }
 
   return (
