@@ -5,7 +5,9 @@ const CrearCuenta = () => {
   return (
     <div>
       <Layout>
-        <h1>Crear cuenta</h1>
+        <>
+          <h1>Crear cuenta</h1>
+        </>
       </Layout>
     </div>
   );
