@@ -13,12 +13,12 @@ import firebase from "../firebase";
 
 // Validaciones
 import useValidacion from "../hooks/useValidacion";
-import validarCrearCuenta from "../validacion/validarCrearCuenta";
+import validarCrearProducto from "../validacion/validarCrearProducto";
 
 const STATE_INICIAL = {
   nombre: "",
   empresa: "",
-  imagen: "",
+  // imagen: "",
   url: "",
   descripcion: ""
 };
@@ -31,7 +31,7 @@ const NuevoProducto = () => {
     handleSubmit,
     handleChange,
     handleBlur
-  } = useValidacion(STATE_INICIAL, validarCrearCuenta, crearCuenta);
+  } = useValidacion(STATE_INICIAL, validarCrearProducto, crearCuenta);
   const { nombre, empresa, imagen, url, descripcion } = valores;
 
   async function crearCuenta() {}
@@ -67,6 +67,20 @@ const NuevoProducto = () => {
               {errores.nombre && <Error>{errores.nombre}</Error>}
 
               <Campo>
+                <label htmlFor="nombre">Empresa</label>
+                <input
+                  type="text"
+                  id="empresa"
+                  placeholder="Nombre de Empresa o Compañia"
+                  name="empresa"
+                  value={empresa}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+              </Campo>
+              {errores.empresa && <Error>{errores.empresa}</Error>}
+
+              {/* <Campo>
                 <label htmlFor="imagen">Imagen</label>
                 <input
                   type="text"
@@ -77,7 +91,7 @@ const NuevoProducto = () => {
                   onBlur={handleBlur}
                 />
               </Campo>
-              {errores.imagen && <Error>{errores.imagen}</Error>}
+              {errores.imagen && <Error>{errores.imagen}</Error>} */}
 
               <Campo>
                 <label htmlFor="url">Url</label>
@@ -85,6 +99,7 @@ const NuevoProducto = () => {
                   type="url"
                   id="url"
                   name="url"
+                  placeholder="URL de tu producto"
                   value={url}
                   onChange={handleChange}
                   onBlur={handleBlur}
