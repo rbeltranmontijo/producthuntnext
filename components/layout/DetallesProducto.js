@@ -93,6 +93,7 @@ const DetallesProducto = ({ producto }) => {
     urlImagen,
     votos
   } = producto;
+
   return (
     <Producto>
       <DescripcionProducto>
