@@ -11,6 +11,7 @@ import { es } from "date-fns/locale";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import { Campo, InputSubmit } from "../../components/ui/Formulario";
+import Boton from "../../components/ui/Boton";
 
 const ContenedorProducto = styled.div`
   @media (min-width: 768px) {
@@ -32,7 +33,7 @@ const Producto = () => {
   } = router;
 
   //context de firebse
-  const { firebase } = useContext(FirebaseContext);
+  const { firebase, usuario } = useContext(FirebaseContext);
 
   useEffect(() => {
     if (id) {
@@ -59,7 +60,8 @@ const Producto = () => {
     empresa,
     url,
     urlImagen,
-    votos
+    votos,
+    creador
   } = producto;
 
   return (
@@ -81,15 +83,23 @@ const Producto = () => {
                 Publicado hace:{" "}
                 {formatDistanceToNow(new Date(creado), { locale: es })}
               </p>
+              <p>
+                Por: {creador.nombre} de {empresa}
+              </p>
               <img src={urlImagen} alt="" />
               <p>{descripcion}</p>
-              <h2>Agrega tu comentario</h2>
-              <form action="">
-                <Campo>
-                  <input type="text" name="mensaje" />
-                </Campo>
-                <InputSubmit type="submit" value="Agregar Comentario" />
-              </form>
+              {usuario && (
+                <>
+                  {" "}
+                  <h2>Agrega tu comentario</h2>
+                  <form action="">
+                    <Campo>
+                      <input type="text" name="mensaje" />
+                    </Campo>
+                    <InputSubmit type="submit" value="Agregar Comentario" />
+                  </form>{" "}
+                </>
+              )}
               <h2
                 css={css`
                   margin: 2rem 0;
@@ -104,7 +114,26 @@ const Producto = () => {
                 </li>
               ))}
             </div>
-            <aside>2</aside>
+            <aside>
+              <Boton target="_blanck" bgColor="true" href={url}>
+                Visitar URL
+              </Boton>
+
+              <div
+                css={css`
+                  margin-top: 5rem;
+                `}
+              >
+                {usuario && <Boton>Votar</Boton>}
+                <p
+                  css={css`
+                    text-align: center;
+                  `}
+                >
+                  Votos: {votos}
+                </p>
+              </div>
+            </aside>
           </ContenedorProducto>
         </div>
       </>
