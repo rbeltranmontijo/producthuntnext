@@ -15,6 +15,7 @@ const Home = () => {
     };
     obtenerProductos();
   }, []);
+
   function manejarSnapshot(snapshot) {
     const productos = snapshot.docs.map(doc => {
       return {
@@ -22,8 +23,10 @@ const Home = () => {
         ...doc.data()
       };
     });
+    console.log(productos)
     guardarProductos(productos);
   }
+
   return (
     <div>
       <Layout>

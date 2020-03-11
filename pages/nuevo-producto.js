@@ -51,7 +51,7 @@ const NuevoProducto = () => {
   console.log(usuario);
 
   async function crearProducto() {
-    console.log("empieza a crear productpo");
+    // console.log("empieza a crear productpo");
     // si el usuario no esta autenticado llevarlo al login
     if (!usuario) {
       return router.push("/login");
@@ -156,7 +156,7 @@ const NuevoProducto = () => {
                     id="empresa"
                     placeholder="Nombre de Empresa o Compañia"
                     name="empresa"
-                    randomFilename
+                    randomizeFilename
                     storageRef={firebase.storage.ref("productos")}
                     onUploadStart={handleUploadStart}
                     onUploadError={handleUploadError}
