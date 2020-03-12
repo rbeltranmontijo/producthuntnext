@@ -1,0 +1,39 @@
+[debug] [2020-03-12T03:48:02.051Z] ----------------------------------------------------------------------
+[debug] [2020-03-12T03:48:02.053Z] Command:       /Users/robinbeltran/.nvm/versions/node/v12.14.1/bin/node /Users/robinbeltran/.nvm/versions/node/v12.14.1/bin/firebase init hosting
+[debug] [2020-03-12T03:48:02.053Z] CLI Version:   7.14.0
+[debug] [2020-03-12T03:48:02.053Z] Platform:      darwin
+[debug] [2020-03-12T03:48:02.053Z] Node Version:  v12.14.1
+[debug] [2020-03-12T03:48:02.054Z] Time:          Wed Mar 11 2020 21:48:02 GMT-0600 (GMT-06:00)
+[debug] [2020-03-12T03:48:02.054Z] ----------------------------------------------------------------------
+[debug] [2020-03-12T03:48:02.054Z] 
+[debug] [2020-03-12T03:48:02.063Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-12T03:48:02.063Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/robinbeltran/cursos/react-de-principiante-a-experto/producthuntnext
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2020-03-12T03:48:05.151Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects?pageSize=100  
+ 
+[debug] [2020-03-12T03:48:06.341Z] <<< HTTP RESPONSE 200
+[info] i  Using project product-hunt-9b360 (Product Hunt)
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
